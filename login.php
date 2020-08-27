@@ -1,6 +1,6 @@
 <?php
-$matricula = filter_input(INPUT_POST, 'mat');
-$senha = filter_input(INPUT_POST, 'senha');
+$matricula = filter_input(INPUT_POST,'mat');
+$senha = filter_input(INPUT_POST,'senha');
 error_reporting(E_ERROR);
 if (isset($matricula)) {
     $usuarios = [

@@ -1,0 +1,23 @@
+.main-content{
+    height: calc(100vh - 160px);
+}
+div.logout{
+display: flex;
+align-items: center;
+justify-content: flex-end;
+height: 20px;
+padding:10px 30px 0 0;
+font-size: 22px
+}
+.logout a{
+    color: black;
+
+}
+.logout i{
+    margin-right: 8px;
+   
+}
+.logout a:hover i{
+    transition: 1s color;
+     color: #ff8c00;
+}

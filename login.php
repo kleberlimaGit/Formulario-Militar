@@ -1,6 +1,6 @@
 <?php
-$matricula = filter_input(INPUT_POST,'mat');
-$senha = filter_input(INPUT_POST,'senha');
+$matricula = filter_input(INPUT_POST, 'mat');
+$senha = filter_input(INPUT_POST, 'senha');
 error_reporting(E_ERROR);
 if (isset($matricula)) {
     $usuarios = [
@@ -27,6 +27,12 @@ if (isset($matricula)) {
             $_SESSION['usuario'] = $usuario['nome'];
             $_SESSION['mat'] = $usuario['matricula'];
             $_SESSION['e-mail'] = $usuario['email'];
+            
+            $exp = time() + 60*60*24;
+            setcookie('usuario',$usuario['nome'],$exp);
+            setcookie('mat',$usuario['matricula'],$exp);
+            setcookie('e-mail',$usuario['email'],$exp);
+            
             header('Location: logado.php');
             
         }
